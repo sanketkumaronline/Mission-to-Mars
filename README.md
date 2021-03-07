@@ -10,10 +10,10 @@ I am helping Robin build a web application using:
 
 The various elements scraped and displayed in the **Mission to Mars** web application are:
 
-* Title and Summary of most recent news article on NASA's Mars News website (https://mars.nasa.gov/news/)
-* Featured image from Jet Propulsion Laboratory's Space Images page (https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html)      
-* Information about Mars in tabular format from Mars Facts webpage on Space Facts website (https://space-facts.com/mars/)  
-* Images and Titles of Mars' hemispheres from USGS Astrogeology Science Center (https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars)
+* Title and Summary of most recent news article on NASA's Mars News website
+* Featured image from Jet Propulsion Laboratory's Space Images page      
+* Information about Mars in tabular format from Mars Facts webpage on Space Facts website
+* Images and Titles of Mars' hemispheres from USGS Astrogeology Science Center
 
 ## Deliverables:
 
