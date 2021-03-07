@@ -22,22 +22,22 @@ The various elements scraped and displayed in the **Mission to Mars** web applic
 
 ### 2. Web App Screenshots on Various Devices
 
-**Desktop Version**
+**Desktop Version:**
 
 ![mission-to-mars-desktop](./Images/mission-to-mars-desktop.png)
 
 
-**Mobile Version**
+**Mobile Version:**
 
 ![mission-to-mars-mobile](./Images/mission-to-mars-mobile.png)
 
 
-**Tablet Version**
+**Tablet Version:**
 
 ![mission-to-mars-tablet](./Images/mission-to-mars-tablet.png)
 
 
-### 3. Bootstrap Elements Used
+### 3. Two Additional Bootstrap Components Used
 
 1. Used following Bootstrap class to show thumbnail version of Mars Hemispheres images in single row for Desktop version, two images per row for tablet version, and single image for mobile version.
 
