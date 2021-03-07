@@ -43,6 +43,6 @@ The various elements scraped and displayed in the **Mission to Mars** web applic
 
     `<div class="col-md-3 col-xs-12 col-sm-6">`
 
-2. Changed the color of "Scrape New Data" button using following Bootstrap class.
+2. Changed the color of "Scrape New Data" button to Green using following Bootstrap class.
 
     `class="btn btn-success btn-lg"`
