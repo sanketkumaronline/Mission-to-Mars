@@ -1,7 +1,7 @@
 # Mission to Mars
 
 ## Overview
-A junior data scientist, Robin, does freelance astronomy work in her free time. Her dream is to get a job with NASA some day and often visits website with news about space exploration. Especially, the mission to mars. She wanted to create a script that can gather all the information she looks for in one place. She hopes it may get NASA's attention.
+A junior data scientist, Robin, does freelance astronomy work in her free time. Her dream is to get a job with NASA some day and often visits websites with news about space exploration. Especially, the mission to mars. She wanted to create a script that can gather all the information she looks for in one place. She hopes it may get NASA's attention.
 
 I am helping Robin build a web application using:
 1. A **Python** script which will scrape data related to mars from various space exploration websites 
