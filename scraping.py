@@ -18,17 +18,14 @@ def scrape_all():
       "news_paragraph": news_paragraph,
       "featured_image": featured_image(browser),
       "facts": mars_facts(),
-      "last_modified": dt.datetime.now()
+      "last_modified": dt.datetime.now(),
+      "hemispheres": hemisphere_data(browser)
    }
 
     # Stop webdriver and return data
    browser.quit()
    return data
 
-# Set the executable path and initialize the chrome browser in splinter
-
-executable_path = {'executable_path': driver_loc}
-browser = Browser('chrome', **executable_path)
 
 def mars_news(browser):
     # Visit the mars nasa news site
@@ -61,7 +58,7 @@ def mars_news(browser):
 # ### JPL Space Featured Images
 
 
-def fetured_image(browser):
+def featured_image(browser):
     # Visit URL
     url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     browser.visit(url)
@@ -72,7 +69,7 @@ def fetured_image(browser):
 
     # Parse the resulting html with soup
     html = browser.html
-    img_soup = soup(html, 'html.parser')
+    img_soup = soup(html,'html.parser')
 
     try:
         # Find the relative image url
@@ -103,7 +100,50 @@ def mars_facts():
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html()
 
+# ## Hemisphere Images and Titles
+
+def hemisphere_data(browser):
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+    html = browser.html
+    imgs_soup = soup(html, 'html.parser')
+
+    # Create a list to hold the images and titles.
+    hemisphere_image_urls = []
+
+    # Write code to retrieve the image urls and titles for each hemisphere.
+    title_container = imgs_soup.find_all("div", class_="description")
+
+    try:
+        for title in title_container:
+            # Creating empty dictionary
+            hemispheres = {}
+            
+            # Fetching the Titles of the hemisphere images
+            hemis_title = title.find("h3").get_text()
+
+            # Visiting the hemisphere details pages and getting the URLs of large images 
+            hemis_url = title.find("a", class_="itemLink product-item").get('href')
+            hemis_full_url = f'https://astrogeology.usgs.gov{hemis_url}'
+            browser.visit(hemis_full_url)
+            browser.is_element_present_by_text('Sample', wait_time=2)
+            final_image_url = browser.links.find_by_text('Sample')['href']
+
+            # Adding image URLs and titles in the dictionary
+            hemispheres["img_url"] = final_image_url
+            hemispheres["title"] = hemis_title
+
+            # Appending dictionary in the list
+            hemisphere_image_urls.append(hemispheres.copy())
+
+    
+    except BaseException:
+            return None
+
+    return hemisphere_image_urls
+
 if __name__ == "__main__":
 
     # If running as script, print scraped data
     print(scrape_all())
+
