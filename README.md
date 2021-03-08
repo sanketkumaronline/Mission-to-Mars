@@ -39,7 +39,7 @@ The various elements scraped and displayed in the **Mission to Mars** web applic
 
 ### 3. Two Additional Bootstrap Components Used
 
-1. Used following Bootstrap class to show thumbnail version of Mars Hemispheres images in single row for Desktop version, two images per row for tablet version, and single image for mobile version.
+1. Used following Bootstrap class to show thumbnail version of Mars Hemispheres images in single row for Desktop version, single image for mobile version, and two images per row for tablet version (except iPad Pro 12.9 inch).
 
     `<div class="col-md-3 col-xs-12 col-sm-6">`
 
