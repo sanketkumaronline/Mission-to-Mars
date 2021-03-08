@@ -4,11 +4,10 @@ from bs4 import BeautifulSoup as soup
 import pandas as pd
 import datetime as dt
 
-driver_loc = 'C:\\Users\Sanket\AppData\Local\Temp\Temp1_chromedriver_win32.zip\chromedriver.exe'
-
 def scrape_all():
    # Initiate headless driver for deployment
-   browser = Browser("chrome", executable_path=driver_loc, headless=True)
+   executable_path = {'executable_path': 'chromedriver.exe'}
+   browser = Browser("chrome", **executable_path)
 
    news_title, news_paragraph = mars_news(browser)
 
